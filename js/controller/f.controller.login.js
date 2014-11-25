@@ -1,0 +1,14 @@
+f.controller.Login=function(contactsService){
+	this.contactsService=contactsService;
+};
+f.controller.Login.prototype.login=function(name){
+	try{
+		this.contactsService.login(name,function(){
+			mui.openWindow('');
+		});
+	}catch(ex){
+		f.doError(ex);
+	}
+};
+f.controller.Login.prototype.logout=function(){};
+f.controller.Login.prototype.isLogin=function(){};
